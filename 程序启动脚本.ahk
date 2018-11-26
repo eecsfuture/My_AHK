@@ -26,6 +26,7 @@
 
 ;常用网址 Alt+字母
 !g:: Run www.google.com
+!s:: Run https://www.startpage.com
 !b:: Run www.baidu.com
 !h:: Run www.github.com
 !k:: Run https://keep.google.com/u/0/#home
