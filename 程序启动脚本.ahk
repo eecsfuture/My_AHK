@@ -560,18 +560,18 @@ WinGet, outputvar ,MinMax中参数outputvar的含义:
 ;   (Disabled)  Alt + CapsLock + s  |  AltTab     (Switch Windows)   ;|
 ;   (Disabled)  Alt + CapsLock + q  |  Ctrl + w   (Close Windows)    ;|
 ;-----------------------------------o---------------------------------o
-CapsLock & a::                                                         ;| 
-WinGet,S,MinMax,A                                                     ;|
-if S=1                                                                  ;|
+CapsLock & a::                                                       ;| 
+WinGet,S,MinMax,A                                                    ;|
+if S=1                                                               ;|
     WinRestore,A                                                     ;|
-else                                                                  ;|
-    WinMaximize,A                                                     ;|
-return                                                                  ;|
-;-----------------------------------o                                  ;| 
-CapsLock & s::                                                         ;|
-WinGet,S,MinMax,A                                                     ;|
-WinMinimize,A                                                         ;|
-return                                                                  ;|
+else                                                                 ;|
+    WinMaximize,A                                                    ;|
+return                                                               ;|
+;-----------------------------------o                                ;| 
+CapsLock & s::                                                       ;|
+WinGet,S,MinMax,A                                                    ;|
+WinMinimize,A                                                        ;|
+return                                                               ;|
 ;-----------------------------------o                                ;|
 CapsLock & q::Send, !{F4}                                            ;|                                                             ;|
 ;-----------------------------------o                                ;|
@@ -582,15 +582,20 @@ CapsLock & g:: Send, {AppsKey}                                       ;|
 ;=====================================================================o
 ;                        CapsLock Self Defined Area                  ;|
 ;-----------------------------------o---------------------------------o
-;                     CapsLock + d  |  Alt + d(Dictionary)           ;|
-;                     CapsLock + f  |  Alt + f(Search via Everything);|
-;                     CapsLock + e  |  Open Search Engine            ;|
-;                     CapsLock + r  |  Open Shell                    ;|
-;                     CapsLock + t  |  Open Text Editor              ;|
+;                     CapsLock + d  |  Delete                        ;|
+;                     CapsLock + e  |  Enter                         ;|
+;                     CapsLock + b  |  Backspace                     ;|
+;                     CapsLock + r  |  文件或文件夹属性               ;|
+;                     CapsLock + f  |  任务栏的小三角                 ;|
 ;-----------------------------------o---------------------------------o
 CapsLock & d:: Send, {Del}                                           ;|
 CapsLock & e:: Send, {Enter}                                         ;|
 CapsLock & b:: Send, {BS}                                            ;|
+CapsLock & r::                                                       ;|
+MouseClick, right                                                    ;|
+Sleep, 10  ; wait 10 milliseconds                                    ;|
+Send, r                                                              ;|
+return                                                               ;|
 ;CapsLock & f:: Send, !f                                             ;|
 ;windows+B快捷键将焦点定位到任务栏的小三角，然后在点击enter打开
 CapsLock & f:: Send, #b{Enter}
