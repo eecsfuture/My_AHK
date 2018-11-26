@@ -1,4 +1,7 @@
-﻿ FormatTime, NewDirName, ,yyyyMMdd
+﻿ ;启动文件夹位置 C:\Users\titit\AppData\Roaming\Microsoft\Windows\Start Menu\Programs
+ 
+ 
+ FormatTime, NewDirName, ,yyyyMMdd
  ;NewDirName := %NewDirName%
 ; 自定义新建的文件夹或文件名称, 可以用变量, 例如日期或剪贴板中的内容
 
@@ -83,7 +86,7 @@ Return
     While, FoundPos := RegExMatch(ObjDir, "i)(?<=%)[\da-f]{1,2}", hex)        ; 在路径中含特殊符号时还原这些符号
           StringReplace, ObjDir, ObjDir, `%%hex%, % Chr("0x" . hex), All
   }
-  FileCopy, C:\Users\titit\Desktop\App\1 AHK常用程序启动脚本\新建空白文件\空白word文档.docx, %ObjDir%\%NewDirName%.docx
+  FileCopy, C:\Users\titit\workspace_v7\My_AHK\新建空白文件\空白word文档.docx, %ObjDir%\%NewDirName%.docx
 Return
 
 
@@ -110,7 +113,7 @@ Return
     While, FoundPos := RegExMatch(ObjDir, "i)(?<=%)[\da-f]{1,2}", hex)        ; 在路径中含特殊符号时还原这些符号
           StringReplace, ObjDir, ObjDir, `%%hex%, % Chr("0x" . hex), All
   }
-  FileCopy, C:\Users\titit\Desktop\App\1 AHK常用程序启动脚本\新建空白文件\空白excel文档.xlsx, %ObjDir%\%NewDirName%.xlsx
+  FileCopy, C:\Users\titit\workspace_v7\My_AHK\新建空白文件\空白excel文档.xlsx, %ObjDir%\%NewDirName%.xlsx
 Return
 
 ;新建visio文档 右边Alt+字母
@@ -136,7 +139,7 @@ Return
     While, FoundPos := RegExMatch(ObjDir, "i)(?<=%)[\da-f]{1,2}", hex)        ; 在路径中含特殊符号时还原这些符号
           StringReplace, ObjDir, ObjDir, `%%hex%, % Chr("0x" . hex), All
   }
-  FileCopy, C:\Users\titit\Desktop\App\1 AHK常用程序启动脚本\新建空白文件\空白visio文档.vsdx, %ObjDir%\%NewDirName%.vsdx
+  FileCopy, C:\Users\titit\workspace_v7\My_AHK\新建空白文件\空白visio文档.vsdx, %ObjDir%\%NewDirName%.vsdx
 Return
 
 
@@ -163,7 +166,7 @@ Return
     While, FoundPos := RegExMatch(ObjDir, "i)(?<=%)[\da-f]{1,2}", hex)        ; 在路径中含特殊符号时还原这些符号
           StringReplace, ObjDir, ObjDir, `%%hex%, % Chr("0x" . hex), All
   }
-  FileCopy, C:\Users\titit\Desktop\App\1 AHK常用程序启动脚本\新建空白文件\空白文本文档.txt, %ObjDir%\%NewDirName%.txt
+  FileCopy, C:\Users\titit\workspace_v7\My_AHK\新建空白文件\空白文本文档.txt, %ObjDir%\%NewDirName%.txt
 Return
 
 
@@ -190,7 +193,7 @@ Return
     While, FoundPos := RegExMatch(ObjDir, "i)(?<=%)[\da-f]{1,2}", hex)        ; 在路径中含特殊符号时还原这些符号
           StringReplace, ObjDir, ObjDir, `%%hex%, % Chr("0x" . hex), All
   }
-  FileCopy, C:\Users\titit\Desktop\App\1 AHK常用程序启动脚本\新建空白文件\空白头文件.h, %ObjDir%\%NewDirName%.h
+  FileCopy, C:\Users\titit\workspace_v7\My_AHK\新建空白文件\空白头文件.h, %ObjDir%\%NewDirName%.h
 Return
 
 
@@ -217,7 +220,7 @@ Return
     While, FoundPos := RegExMatch(ObjDir, "i)(?<=%)[\da-f]{1,2}", hex)        ; 在路径中含特殊符号时还原这些符号
           StringReplace, ObjDir, ObjDir, `%%hex%, % Chr("0x" . hex), All
   }
-  FileCopy, C:\Users\titit\Desktop\App\1 AHK常用程序启动脚本\新建空白文件\空白源文件.c, %ObjDir%\%NewDirName%.c
+  FileCopy, C:\Users\titit\workspace_v7\My_AHK\新建空白文件\空白源文件.c, %ObjDir%\%NewDirName%.c
 Return
 
 
@@ -586,7 +589,7 @@ CapsLock & g:: Send, {AppsKey}                                       ;|
 ;-----------------------------------o---------------------------------o
 CapsLock & d:: Send, {Del}                                           ;|
 CapsLock & e:: Send, {Enter}                                         ;|
-CapsLock & b:: Send, {BS}                                         ;|
+CapsLock & b:: Send, {BS}                                            ;|
 ;CapsLock & f:: Send, !f                                             ;|
 ;windows+B快捷键将焦点定位到任务栏的小三角，然后在点击enter打开
 CapsLock & f:: Send, #b{Enter}
