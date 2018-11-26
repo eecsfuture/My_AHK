@@ -587,22 +587,33 @@ CapsLock & g:: Send, {AppsKey}                                       ;|
 ;                     CapsLock + b  |  Backspace                     ;|
 ;                     CapsLock + r  |  文件或文件夹属性               ;|
 ;                     CapsLock + f  |  任务栏的小三角                 ;|
+;                     CapsLock + t  |  chrome浏览器截图并保存         ;|
 ;-----------------------------------o---------------------------------o
 CapsLock & d:: Send, {Del}                                           ;|
 CapsLock & e:: Send, {Enter}                                         ;|
 CapsLock & b:: Send, {BS}                                            ;|
 CapsLock & r::                                                       ;|
+
 MouseClick, right                                                    ;|
 Sleep, 10  ; wait 10 milliseconds                                    ;|
 Send, r                                                              ;|
 return                                                               ;|
-;CapsLock & f:: Send, !f                                             ;|
-;windows+B快捷键将焦点定位到任务栏的小三角，然后在点击enter打开
-CapsLock & f:: Send, #b{Enter}
 
-;CapsLock & e:: Run http://cn.bing.com/                              ;|
-;CapsLock & r:: Run Powershell                                       ;|
-;CapsLock & t:: Run C:\Program Files (x86)\Notepad++\notepad++.exe   ;|
+;CapsLock & f:: Send, !f                                             ;|
+;windows+B快捷键将焦点定位到任务栏的小三角，然后在点击enter打开          ;|
+CapsLock & f:: Send, #b{Enter}                                       ;|
+
+CapsLock & t::                                                       ;|
+Send, {F12}                                                          ;|
+Sleep, 1000                                                          ;|
+Send, ^+p                                                            ;|
+Sleep, 1000                                                          ;|
+Send, capture full                                                   ;|
+Sleep, 500                                                           ;|
+Send, {Enter}  ;选择capture full size scrennshot命令                  ;|
+Sleep, 2000                                                          ;|
+Send, {Enter}  ;保存图片                                              ;|
+return                                                               ;|
 ;---------------------------------------------------------------------o
 
 
