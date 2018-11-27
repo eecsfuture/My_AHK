@@ -609,9 +609,9 @@ Sleep, 1000                                                          ;|
 Send, ^+p                                                            ;|
 Sleep, 1000                                                          ;|
 Send, capture full                                                   ;|
-Sleep, 500                                                           ;|
+Sleep, 1000                                                           ;|
 Send, {Enter}  ;选择capture full size scrennshot命令                  ;|
-Sleep, 2000                                                          ;|
+Sleep, 4000                                                          ;|
 Send, {Enter}  ;保存图片                                              ;|
 return                                                               ;|
 ;---------------------------------------------------------------------o
