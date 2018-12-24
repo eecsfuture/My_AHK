@@ -589,7 +589,7 @@ CapsLock & g:: Send, {AppsKey}                                       ;|
 ;                     CapsLock + f  |  任务栏的小三角                 ;|
 ;                     CapsLock + t  |  chrome浏览器截图并保存         ;|
 ;-----------------------------------o---------------------------------o
-CapsLock & d:: Send, {Del}                                           ;|
+;CapsLock & d:: Send, {Del}                                          ;|
 CapsLock & e:: Send, {Enter}                                         ;|
 CapsLock & b:: Send, {BS}                                            ;|
 CapsLock & r::                                                       ;|
