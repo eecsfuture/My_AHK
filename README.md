@@ -24,7 +24,7 @@ AHK的学习曲线不像Vim那样陡峭，非常容易上手，网上有大量�
 
 **注意：使用时需要修改相应的程序或文件路径。**
 
-[脚本位置My_AHK.ahk](https://github.com/eecsfuture/My_AHK/My_AHK.ahk)
+[脚本内容见My_AHK.ahk](https://github.com/eecsfuture/My_AHK/blob/master/My_AHK.ahk)
 
 ### 1 打开软件和网址
 
