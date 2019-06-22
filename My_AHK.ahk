@@ -10,21 +10,24 @@
 ^!c:: Run "C:\ti\ccsv7\eclipse\ccstudio.exe"  ; CCS
 ^!m:: Run "C:\Program Files (x86)\Matlab_R2009A\bin\matlab.exe"
 ^!x:: Run "C:\Program Files (x86)\Altium\AD16\DXP.EXE"
-^!v:: Run "C:\Program Files\Microsoft VS Code\Code.exe"
+; ^!v:: Run "C:\Program Files\Microsoft VS Code\Code.exe"
 ^!d:: Run "C:\Users\titit\AppData\Local\GitHubDesktop\GitHubDesktop.exe"
 
 ; 打开常用软件 Ctrl+Alt+字母
-^!q:: Run "C:\Program Files (x86)\Tencent\TIM\Bin\QQScLauncher.exe"
+; ^!q:: Run "C:\Program Files (x86)\Tencent\TIM\Bin\QQScLauncher.exe"
 ^!w:: Run "C:\Program Files (x86)\Tencent\WeChat\WeChat.exe"
 ^!j:: Run calc.exe  ; 计算器
 ^!g:: Run "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
+^!f:: Run "C:\Program Files\Mozilla Firefox\firefox.exe"
 ^!i:: Run iexplore.exe  ; IE浏览器
 ^!e:: Run "C:\Program Files\Everything\Everything.exe"  ; 搜索神器Everything
 
 ; 打开常用网址 Alt+字母
-!s:: Run https://www.startpage.com  ; 注重保护隐私的搜索引擎，搜索效果等同于谷歌
+!s:: Run www.startpage.com  ; 注重保护隐私的搜索引擎，搜索效果等同于谷歌
 !b:: Run www.baidu.com
 !h:: Run www.github.com
+!f:: Run https://feedly.com/i/my
+!p:: Run https://program-think.blogspot.com/
 ; 谷歌四件套：搜索、Keep、Gmail、Calendar
 !g:: Run www.google.com
 !k:: Run https://keep.google.com/u/0/#home
