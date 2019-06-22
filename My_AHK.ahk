@@ -127,6 +127,13 @@ Return
   FileCopy, C:\Users\titit\workspace_v7\My_AHK\新建空白文件\空白源文件.c, %ObjDir%\%NewDirName%.c
 Return
 
+; 新建Markdown文件 右Alt+字母m
+>!m::
+  ObjDir := GetObjDir()
+  NewDirName := GetNewDirName()
+  FileCopy, C:\Users\titit\workspace_v7\My_AHK\新建空白文件\空白Markdown文件.md, %ObjDir%\%NewDirName%.md
+Return
+
 
 ;=====================================================================o
 ;                   Feng Ruohang's AHK Script                         |
