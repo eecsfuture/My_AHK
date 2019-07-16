@@ -28,11 +28,15 @@
 !h:: Run www.github.com
 !f:: Run https://feedly.com/i/my
 !p:: Run https://program-think.blogspot.com/
-; 谷歌四件套：搜索、Keep、Gmail、Calendar
+!y:: Run https://news.ycombinator.com/
+!n:: Run https://cn.nytimes.com/
+; 谷歌四件套：搜索、Keep、Gmail、Calendar，放弃使用谷歌产品，保护个人隐私
 !g:: Run www.google.com
-!k:: Run https://keep.google.com/u/0/#home
-!m:: Run https://mail.google.com/mail/u/0/
-!c:: Run https://calendar.google.com/calendar/r
+; !k:: Run https://keep.google.com/u/0/#home
+; !m:: Run https://mail.google.com/mail/u/0/
+; !c:: Run https://calendar.google.com/calendar/r
+!i:: Run https://www.icloud.com/#  ; 使用苹果icloud代替谷歌Calendar和Keep
+!m:: Run https://mail.protonmail.com/inbox  ; 使用protonmail代替Gmail
 
 ; 打开常用文件夹 Ctrl+Shift+字母
 ^+w:: Run C:\Users\titit\workspace_v7  ; CCS工作空间文件夹
