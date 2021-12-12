@@ -1,51 +1,74 @@
-﻿;启动文件夹位置 C:\Users\titit\AppData\Roaming\Microsoft\Windows\Start Menu\Programs
+﻿;启动文件夹位置
+;C:\Users\z002803\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
 ;将可执行程序的快捷方式放入启动文件夹，可以实现开机启动AHK程序
 
 
 ;=====================================================================o
-;                         打开软件和网址                               |
+;                         输入密码                                    |
 ;=====================================================================o
 
-; 打开专业软件 Ctrl+Alt+字母
-^!c:: Run "C:\ti\ccsv7\eclipse\ccstudio.exe"  ; CCS
-^!m:: Run "C:\Program Files (x86)\Matlab_R2009A\bin\matlab.exe"
-^!x:: Run "C:\Program Files (x86)\Altium\AD16\DXP.EXE"
-; ^!v:: Run "C:\Program Files\Microsoft VS Code\Code.exe"
-^!d:: Run "C:\Users\titit\AppData\Local\GitHubDesktop\GitHubDesktop.exe"
+::ss::Git1109@zemt
+
+;=====================================================================o
+;                         打开软件和网址                              |
+;=====================================================================o
+
+; 打开专业软件 Ctrl+Alt+字母，通过添加环境变量的方法定位程序
+;^!c:: Run "C:\ti\ccsv7\eclipse\ccstudio.exe"  ; CCS
+;^!m:: Run "C:\Program Files (x86)\Matlab_R2009A\bin\matlab.exe"
+;^!x:: Run "C:\Program Files (x86)\Altium\AD16\DXP.EXE"
+;^!d:: Run GitHubDesktop.exe
+^!v:: Run Code.exe
+^!t:: Run C:\Users\z002803\Documents\github\batch-script\1-run-cpu-program\run-cpu-program.bat
 
 ; 打开常用软件 Ctrl+Alt+字母
-; ^!q:: Run "C:\Program Files (x86)\Tencent\TIM\Bin\QQScLauncher.exe"
-^!w:: Run "C:\Program Files (x86)\Tencent\WeChat\WeChat.exe"
-^!j:: Run calc.exe  ; 计算器
-^!g:: Run "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
-^!f:: Run "C:\Program Files\Mozilla Firefox\firefox.exe"
-^!i:: Run iexplore.exe  ; IE浏览器
-^!e:: Run "C:\Program Files\Everything\Everything.exe"  ; 搜索神器Everything
+^!c:: Run WeChat.exe  ; 个人微信
+^!w:: Run C:\Program Files (x86)\WXWork\WXWork.exe  ; 企业微信
+^!j:: Run calc.exe        ; 计算器
+;^!f:: Run brave.exe
+^!i:: Run iexplore.exe    ; IE浏览器
+^!e:: Run Everything.exe  ; 搜索神器Everything
+^!o::                     ; 运行Emacs并打开org文件
+emacs=C:\emacs\bin\runemacs.exe
+orgfile1=C:\personal-data\github-repo\work-org\01-Work-ToDo.org
+orgfile2=C:\personal-data\github-repo\work-org\02-Work-Wiki.org
+Run,%emacs% "%orgfile1%" "%orgfile2%" "%orgfile3%"  ;重点：不要加逗号，文件路径加双引号
+return
+
+; Win+R输入命令后回车 Ctrl+Alt+字母
+^!n::
+;方法1：Win+R后输入ncpa.cpl。在发送ncpa.cpl会有中文输入法问题，导致无法输入完整命令
+;修改小狼毫输入法默认状态为英文后可以解决该问题
+;默认情况下，Rime 使用“朙月拼音”，对应的配置文件为 luna_pinyin.schema.yaml。
+;如果想将它设置为默认输入英文，则将该文件中switches->ascii_mode->reset的值修改为1即可
+;如果修改了 Rime 的默认输入法（如修改为“朙月拼音·简化字”），则配置默认输入状态时，
+;应选择相应的配置文件进行修改。对于“朙月拼音·简化字”来说，这个配置文件是 luna_pinyin_simp.schema.yaml
+;需要注意的是，默认输入状态的配置是针对输入法进行的，因此如果想使所有输入法都默认输入英文，
+;则需要分别修改它们的配置文件。最后，记得部署(deploy)一下 Rime，使配置生效
+Send, #r
+Sleep, 500  ; wait 500 milliseconds
+Send, ncpa.cpl
+Send, {Enter}
+return
+
+;方法2：通过批处理脚本实现,此方法会有黑框，可以用VBS方法解决
+;run C:\Users\z002803\Desktop\App\My_AHK\IP_Config.bat
+;return
 
 ; 打开常用网址 Alt+字母
-!s:: Run www.startpage.com  ; 注重保护隐私的搜索引擎，搜索效果等同于谷歌
+!s:: Run https://cn.bing.com/  ; 必应搜索
 !b:: Run www.baidu.com
 !h:: Run www.github.com
-!f:: Run https://feedly.com/i/my
-!p:: Run https://program-think.blogspot.com/
-!y:: Run https://news.ycombinator.com/
-!n:: Run https://cn.nytimes.com/
-; 谷歌四件套：搜索、Keep、Gmail、Calendar，放弃使用谷歌产品，保护个人隐私
-!g:: Run www.google.com
-; !k:: Run https://keep.google.com/u/0/#home
-; !m:: Run https://mail.google.com/mail/u/0/
-; !c:: Run https://calendar.google.com/calendar/r
-!i:: Run https://www.icloud.com/#  ; 使用苹果icloud代替谷歌Calendar和Keep
-!m:: Run https://mail.protonmail.com/inbox  ; 使用protonmail代替Gmail
+!w:: Run https://wx.qq.com/  ; 微信网页版
+
 
 ; 打开常用文件夹 Ctrl+Shift+字母
-^+w:: Run C:\Users\titit\workspace_v7  ; CCS工作空间文件夹
-^+f:: Run C:\1\FangCloudV2\CleanPower  ; 亿方云同步文件夹
-^+d:: Run C:\Users\titit\Desktop  ; 桌面文件夹
+^+w:: Run D:\  ; D盘（工作文件夹）
+^+d:: Run C:\Users\z002803\Desktop  ; 桌面文件夹
 
 
 ;=====================================================================o
-;                    新建文件和文件夹，以日期命名                        |
+;                    新建文件和文件夹，以日期命名                     |
 ;=====================================================================o
 
 ; 定义GetNewDirName函数，将格式为yyyyMMdd的时间值赋值给变量NewDirName，并将其返回
@@ -93,51 +116,57 @@ Return
 >!w::
   ObjDir := GetObjDir()
   NewDirName := GetNewDirName()
-  FileCopy, C:\Users\titit\workspace_v7\My_AHK\新建空白文件\空白word文档.docx, %ObjDir%\%NewDirName%.docx
+  FileCopy, C:\Users\z002803\Desktop\App\My_AHK\新建空白文件\空白word文档.docx, %ObjDir%\%NewDirName%.docx
 Return
 
 ; 新建excel文档 右Alt+字母e
 >!e::
   ObjDir := GetObjDir()
   NewDirName := GetNewDirName()
-  FileCopy, C:\Users\titit\workspace_v7\My_AHK\新建空白文件\空白excel文档.xlsx, %ObjDir%\%NewDirName%.xlsx
+  FileCopy, C:\Users\z002803\Desktop\App\My_AHK\新建空白文件\空白excel文档.xlsx, %ObjDir%\%NewDirName%.xlsx
 Return
 
 ; 新建visio文档 右Alt+字母v
 >!v::
   ObjDir := GetObjDir()
   NewDirName := GetNewDirName()
-  FileCopy, C:\Users\titit\workspace_v7\My_AHK\新建空白文件\空白visio文档.vsdx, %ObjDir%\%NewDirName%.vsdx
+  FileCopy, C:\Users\z002803\Desktop\App\My_AHK\新建空白文件\空白visio文档.vsdx, %ObjDir%\%NewDirName%.vsdx
 Return
 
 ; 新建文本文档 右Alt+字母t
 >!t::
   ObjDir := GetObjDir()
   NewDirName := GetNewDirName()
-  FileCopy, C:\Users\titit\workspace_v7\My_AHK\新建空白文件\空白文本文档.txt, %ObjDir%\%NewDirName%.txt
+  FileCopy, C:\Users\z002803\Desktop\App\My_AHK\新建空白文件\空白文本文档.txt, %ObjDir%\%NewDirName%.txt
 Return
 
 ; 新建头文件 右Alt+字母h
 >!h::
   ObjDir := GetObjDir()
   NewDirName := GetNewDirName()
-  FileCopy, C:\Users\titit\workspace_v7\My_AHK\新建空白文件\空白头文件.h, %ObjDir%\%NewDirName%.h
+  FileCopy, C:\Users\z002803\Desktop\App\My_AHK\新建空白文件\空白头文件.h, %ObjDir%\%NewDirName%.h
 Return
 
 ; 新建源文件 右Alt+字母c
 >!c::
   ObjDir := GetObjDir()
   NewDirName := GetNewDirName()
-  FileCopy, C:\Users\titit\workspace_v7\My_AHK\新建空白文件\空白源文件.c, %ObjDir%\%NewDirName%.c
+  FileCopy, C:\Users\z002803\Desktop\App\My_AHK\新建空白文件\空白源文件.c, %ObjDir%\%NewDirName%.c
 Return
 
 ; 新建Markdown文件 右Alt+字母m
 >!m::
   ObjDir := GetObjDir()
   NewDirName := GetNewDirName()
-  FileCopy, C:\Users\titit\workspace_v7\My_AHK\新建空白文件\空白Markdown文件.md, %ObjDir%\%NewDirName%.md
+  FileCopy, C:\Users\z002803\Desktop\App\My_AHK\新建空白文件\空白Markdown文件.md, %ObjDir%\%NewDirName%.md
 Return
 
+; 新建Scheme文件 右Alt+字母s
+>!s::
+  ObjDir := GetObjDir()
+  NewDirName := GetNewDirName()
+  FileCopy, C:\Users\z002803\Desktop\App\My_AHK\新建空白文件\空白Scheme文件.ss, %ObjDir%\%NewDirName%.ss
+Return
 
 ;=====================================================================o
 ;                   Feng Ruohang's AHK Script                         |
@@ -209,7 +238,7 @@ CapsLock::Send, {ESC}                                                ;|
 ;                      CapsLock + j |  Down                          ;|
 ;                      CapsLock + k |  Up                            ;|
 ;                      CapsLock + l |  Right                         ;|
-;                      Ctrl, Alt Compatible   原来！都为+，已修改      ;|
+;                      Ctrl, Alt Compatible   原来！都为+，已修改    ;|
 ;-----------------------------------o---------------------------------o
 CapsLock & h::                                                       ;|
 if GetKeyState("control") = 0                                        ;|
@@ -405,10 +434,10 @@ return                                                               ;|
 ;                     CapsLock + ,  |  BackSpace                     ;|
 ;                     CapsLock + .  |  Ctrl + BackSpace              ;|
 ;-----------------------------------o---------------------------------o
-;CapsLock & ,:: Send, {Del}                                           ;|
-;CapsLock & .:: Send, ^{Del}                                          ;|
-;CapsLock & m:: Send, {BS}                                            ;|
-;CapsLock & n:: Send, ^{BS}                                           ;|
+;CapsLock & ,:: Send, {Del}                                          ;|
+;CapsLock & .:: Send, ^{Del}                                         ;|
+;CapsLock & m:: Send, {BS}                                           ;|
+;CapsLock & n:: Send, ^{BS}                                          ;|
 ;---------------------------------------------------------------------o
 
 
@@ -428,10 +457,10 @@ CapsLock & z:: Send, ^z                                              ;|
 CapsLock & x:: Send, ^x                                              ;|
 CapsLock & c:: Send, ^c                                              ;|
 CapsLock & v:: Send, ^v                                              ;|
-;CapsLock & a:: Send, ^a                                              ;|
+;CapsLock & a:: Send, ^a                                             ;|
 CapsLock & y:: Send, ^y                                              ;|
 CapsLock & w:: Send, ^{Right}                                        ;|
-;CapsLock & b:: Send, ^{Left}                                         ;|
+;CapsLock & b:: Send, ^{Left}                                        ;|
 ;---------------------------------------------------------------------o
 
 
@@ -470,7 +499,7 @@ WinGet, outputvar ,MinMax中参数outputvar的含义:
 ;                     CapsLock + a  |             (Maximum Windows)  ;|
 ;                     CapsLock + s  |             (Minimum Windows)  ;|
 ;                     CapsLock + q  |  Alt + F4   (Close Windows)    ;|
-;                     CapsLock + g  |  AppsKey    (Menu Key)         ;|
+;          (Disabled) CapsLock + g  |  AppsKey    (Menu Key)         ;|
 ;   (Disabled)  Alt + CapsLock + s  |  AltTab     (Switch Windows)   ;|
 ;   (Disabled)  Alt + CapsLock + q  |  Ctrl + w   (Close Windows)    ;|
 ;-----------------------------------o---------------------------------o
@@ -489,7 +518,7 @@ return                                                               ;|
 ;-----------------------------------o                                ;|
 CapsLock & q::Send, !{F4}                                            ;|                                                             ;|
 ;-----------------------------------o                                ;|
-CapsLock & g:: Send, {AppsKey}                                       ;|
+;CapsLock & g:: Send, {AppsKey}                                      ;|
 ;---------------------------------------------------------------------o
 
 
@@ -497,14 +526,16 @@ CapsLock & g:: Send, {AppsKey}                                       ;|
 ;                        CapsLock Self Defined Area                  ;|
 ;-----------------------------------o---------------------------------o
 ;          (Disabled) CapsLock + d  |  Delete                        ;|
-;                     CapsLock + e  |  Enter                         ;|
+;          (Disabled) CapsLock + e  |  Enter                         ;|
 ;                     CapsLock + b  |  Backspace                     ;|
-;                     CapsLock + r  |  文件或文件夹属性               ;|
-;                     CapsLock + f  |  任务栏的小三角                 ;|
-;                     CapsLock + t  |  chrome浏览器长截图并保存        ;|
+;                     CapsLock + r  |  文件或文件夹属性              ;|
+;                     CapsLock + f  |  任务栏的小三角                ;|
+;                     CapsLock + t  |  chrome浏览器长截图并保存      ;|
+;                     CapsLock + d  |  Project Cross Reference(TKEDT)     ;|
+;                     CapsLock + g  |  Global Variable Declaration(TKEDT) ;|
 ;-----------------------------------o---------------------------------o
 ;CapsLock & d:: Send, {Del}                                          ;|
-CapsLock & e:: Send, {Enter}                                         ;|
+;CapsLock & e:: Send, {Enter}                                         ;|
 CapsLock & b:: Send, {BS}                                            ;|
 CapsLock & r::                                                       ;|
 ;-----------------------------------o                                ;| 
@@ -514,14 +545,14 @@ Send, r                                                              ;|
 return                                                               ;|
 ;-----------------------------------o                                ;| 
 ;CapsLock & f:: Send, !f                                             ;|
-;windows+B快捷键将焦点定位到任务栏的小三角，然后在点击enter打开          ;|
+;windows+B快捷键将焦点定位到任务栏的小三角，然后在点击enter打开      ;|
 CapsLock & f:: Send, #b{Enter}                                       ;|
 ;-----------------------------------o                                ;| 
-;CapsLock & t:: chrome浏览器长截图并保存                              ;|
-; 1. F12快捷键，召唤出调试界面                                         ;|
+;CapsLock & t:: chrome浏览器长截图并保存                             ;|
+; 1. F12快捷键，召唤出调试界面                                       ;|
 ; 2. Ctrl + Shift + P                                                ;|
-; 3. 输入命令 Capture full size screenshot（只输前几个字母就能找到）    ;|
-; 4. 敲下回车，Chrome 就会自动截取整个网页内容并保存至本地               ;|
+; 3. 输入命令 Capture full size screenshot（只输前几个字母就能找到） ;|
+; 4. 敲下回车，Chrome 就会自动截取整个网页内容并保存至本地           ;|
 CapsLock & t::                                                       ;|
 Send, {F12}                                                          ;|
 Sleep, 1000                                                          ;|
@@ -529,9 +560,36 @@ Send, ^+p                                                            ;|
 Sleep, 1000                                                          ;|
 Send, capture full                                                   ;|
 Sleep, 1000                                                          ;|
-Send, {Enter}  ;选择capture full size scrennshot命令                  ;|
+Send, {Enter}  ;选择capture full size scrennshot命令                 ;|
 Sleep, 4000                                                          ;|
-Send, {Enter}  ;保存图片                                              ;|
+Send, {Enter}  ;保存图片                                             ;|
+return                                                               ;|
+;-----------------------------------o                                ;| 
+;CapsLock & d:: TEDET 右键-在工程交叉引用中查找                      ;|
+CapsLock & d::                                                       ;|
+MouseClick, right                                                    ;|
+Loop, 6                                                              ;|
+{                                                                    ;|
+Send, {Up}                                                           ;|
+Sleep, 1                                                             ;|
+}                                                                    ;|
+Send, {Enter}                                                        ;|
+return                                                               ;|
+;-----------------------------------o                                ;|
+;CapsLock & g:: TEDET 右键-在全局变量声明中查找                      ;|
+CapsLock & g::                                                       ;|
+MouseClick, right                                                    ;|
+Loop, 4                                                              ;|
+{                                                                    ;|
+Send, {Up}                                                           ;|
+Sleep, 1                                                             ;|
+}                                                                    ;|
+Send, {Enter}                                                        ;|
+return                                                               ;|
+;-----------------------------------o                                ;|
+;CapsLock & e:: TEDET 显示/隐藏CFC交叉引用视图                       ;|
+CapsLock & e::                                                       ;|
+Send, !v{Up}{Enter}                                                  ;|
 return                                                               ;|
 ;---------------------------------------------------------------------o
 
@@ -575,16 +633,16 @@ return                                                               ;|
 ;CapsLock & 2:: Send,{F5}                                            ;|
 ;CapsLock & 3:: Send,{F10}                                           ;|
 ;CapsLock & 4:: Send,{F11}                                           ;|
-;将 CapsLock+1 定义为 windows+shift+左方向键，将窗口移动到左侧显示器     ;|
+;将 CapsLock+1 定义为 windows+shift+左方向键，将窗口移动到左侧显示器 ;|
 CapsLock & 1:: Send, #+{Left}                                        ;|
 ;-----------------------------------o                                ;|
-;将 CapsLock+2 定义为 windows+shift+右方向键，将窗口移动到右侧显示器     ;|
+;将 CapsLock+2 定义为 windows+shift+右方向键，将窗口移动到右侧显示器 ;|
 CapsLock & 2:: Send, #+{Right}                                       ;|
 ;-----------------------------------o                                ;|
-;将 CapsLock+3 定义为 windows+左方向键，将窗口铺满显示器左半边           ;|
+;将 CapsLock+3 定义为 windows+左方向键，将窗口铺满显示器左半边       ;|
 CapsLock & 3:: Send, #{Left}                                         ;|
 ;-----------------------------------o                                ;|
-;将 CapsLock+4 定义为 windows+右方向键，将窗口铺满显示器右半边           ;|
+;将 CapsLock+4 定义为 windows+右方向键，将窗口铺满显示器右半边       ;|
 CapsLock & 4:: Send, #{Right}                                        ;|
 ;-----------------------------------o                                ;|
 CapsLock & 5:: Send,+{F5}                                            ;|
