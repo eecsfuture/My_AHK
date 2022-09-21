@@ -7,7 +7,8 @@
 ;                         输入密码                                    |
 ;=====================================================================o
 
-::ss::Git1109@zemt
+::s::hdesk.zemt.cn
+::ss::Wang2023@zemt
 
 ;=====================================================================o
 ;                         打开软件和网址                              |
@@ -56,11 +57,18 @@ return
 ;return
 
 ; 打开常用网址 Alt+字母
-!s:: Run https://cn.bing.com/  ; 必应搜索
-!b:: Run www.baidu.com
-!h:: Run www.github.com
-!w:: Run https://wx.qq.com/  ; 微信网页版
+;!s:: Run https://cn.bing.com/  ; 必应搜索
+;!b:: Run www.baidu.com
+;!h:: Run www.github.com
+;!w:: Run https://wx.qq.com/  ; 微信网页版
 
+; Parameter #1: Pass 1 instead of 0 to hibernate rather than suspend.
+; Parameter #2: Pass 1 instead of 0 to suspend immediately rather than asking each application for permission.
+; Parameter #3: Pass 1 instead of 0 to disable all wake events.
+; Alt+h --> hibernate
+!h::DllCall("PowrProf\SetSuspendState", "Int", 1, "Int", 0, "Int", 0)
+; Alt+s --> suspend
+!s::DllCall("PowrProf\SetSuspendState", "Int", 0, "Int", 0, "Int", 0)
 
 ; 打开常用文件夹 Ctrl+Shift+字母
 ^+w:: Run D:\  ; D盘（工作文件夹）
