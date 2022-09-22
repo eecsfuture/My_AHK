@@ -62,13 +62,16 @@ return
 ;!h:: Run www.github.com
 ;!w:: Run https://wx.qq.com/  ; 微信网页版
 
+; 挂起suspend和休眠hibernate
 ; Parameter #1: Pass 1 instead of 0 to hibernate rather than suspend.
 ; Parameter #2: Pass 1 instead of 0 to suspend immediately rather than asking each application for permission.
 ; Parameter #3: Pass 1 instead of 0 to disable all wake events.
-; Alt+h --> hibernate
-!h::DllCall("PowrProf\SetSuspendState", "Int", 1, "Int", 0, "Int", 0)
+; https://www.autohotkey.com/docs/commands/Shutdown.htm
 ; Alt+s --> suspend
 !s::DllCall("PowrProf\SetSuspendState", "Int", 0, "Int", 0, "Int", 0)
+; Alt+h --> hibernate
+!h::DllCall("PowrProf\SetSuspendState", "Int", 1, "Int", 0, "Int", 0)
+
 
 ; 打开常用文件夹 Ctrl+Shift+字母
 ^+w:: Run D:\  ; D盘（工作文件夹）
