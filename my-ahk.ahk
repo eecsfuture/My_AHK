@@ -127,56 +127,56 @@ Return
 >!w::
   ObjDir := GetObjDir()
   NewDirName := GetNewDirName()
-  FileCopy, C:\Users\z002803\Desktop\App\My_AHK\新建空白文件\空白word文档.docx, %ObjDir%\%NewDirName%.docx
+  FileCopy, C:\Users\z002803\Documents\github\ahk-script\新建空白文件\空白word文档.docx, %ObjDir%\%NewDirName%.docx
 Return
 
 ; 新建excel文档 右Alt+字母e
 >!e::
   ObjDir := GetObjDir()
   NewDirName := GetNewDirName()
-  FileCopy, C:\Users\z002803\Desktop\App\My_AHK\新建空白文件\空白excel文档.xlsx, %ObjDir%\%NewDirName%.xlsx
+  FileCopy, C:\Users\z002803\Documents\github\ahk-script\新建空白文件\空白excel文档.xlsx, %ObjDir%\%NewDirName%.xlsx
 Return
 
 ; 新建visio文档 右Alt+字母v
 >!v::
   ObjDir := GetObjDir()
   NewDirName := GetNewDirName()
-  FileCopy, C:\Users\z002803\Desktop\App\My_AHK\新建空白文件\空白visio文档.vsdx, %ObjDir%\%NewDirName%.vsdx
+  FileCopy, C:\Users\z002803\Documents\github\ahk-script\新建空白文件\空白visio文档.vsdx, %ObjDir%\%NewDirName%.vsdx
 Return
 
 ; 新建文本文档 右Alt+字母t
 >!t::
   ObjDir := GetObjDir()
   NewDirName := GetNewDirName()
-  FileCopy, C:\Users\z002803\Desktop\App\My_AHK\新建空白文件\空白文本文档.txt, %ObjDir%\%NewDirName%.txt
+  FileCopy, C:\Users\z002803\Documents\github\ahk-script\新建空白文件\空白文本文档.txt, %ObjDir%\%NewDirName%.txt
 Return
 
 ; 新建头文件 右Alt+字母h
 >!h::
   ObjDir := GetObjDir()
   NewDirName := GetNewDirName()
-  FileCopy, C:\Users\z002803\Desktop\App\My_AHK\新建空白文件\空白头文件.h, %ObjDir%\%NewDirName%.h
+  FileCopy, C:\Users\z002803\Documents\github\ahk-script\新建空白文件\空白头文件.h, %ObjDir%\%NewDirName%.h
 Return
 
 ; 新建源文件 右Alt+字母c
 >!c::
   ObjDir := GetObjDir()
   NewDirName := GetNewDirName()
-  FileCopy, C:\Users\z002803\Desktop\App\My_AHK\新建空白文件\空白源文件.c, %ObjDir%\%NewDirName%.c
+  FileCopy, C:\Users\z002803\Documents\github\ahk-script\新建空白文件\空白源文件.c, %ObjDir%\%NewDirName%.c
 Return
 
 ; 新建Markdown文件 右Alt+字母m
 >!m::
   ObjDir := GetObjDir()
   NewDirName := GetNewDirName()
-  FileCopy, C:\Users\z002803\Desktop\App\My_AHK\新建空白文件\空白Markdown文件.md, %ObjDir%\%NewDirName%.md
+  FileCopy, C:\Users\z002803\Documents\github\ahk-script\新建空白文件\空白Markdown文件.md, %ObjDir%\%NewDirName%.md
 Return
 
 ; 新建Scheme文件 右Alt+字母s
 >!s::
   ObjDir := GetObjDir()
   NewDirName := GetNewDirName()
-  FileCopy, C:\Users\z002803\Desktop\App\My_AHK\新建空白文件\空白Scheme文件.ss, %ObjDir%\%NewDirName%.ss
+  FileCopy, C:\Users\z002803\Documents\github\ahk-script\新建空白文件\空白Scheme文件.ss, %ObjDir%\%NewDirName%.ss
 Return
 
 ;=====================================================================o
