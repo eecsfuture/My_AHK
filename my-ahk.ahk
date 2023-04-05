@@ -1,5 +1,5 @@
 ﻿;启动文件夹位置
-;C:\Users\WangSai\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+;C:\Users\z002803\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
 ;将可执行程序的快捷方式放入启动文件夹，可以实现开机启动AHK程序
 
 
@@ -19,8 +19,8 @@
 ;^!m:: Run "C:\Program Files (x86)\Matlab_R2009A\bin\matlab.exe"
 ;^!x:: Run "C:\Program Files (x86)\Altium\AD16\DXP.EXE"
 ;^!d:: Run GitHubDesktop.exe
-;^!v:: Run Code.exe
-^!t:: Run C:\Users\WangSai\Sync\GitHub\batch-script\1-run-cpu-program\run-cpu-program.bat
+^!v:: Run Code.exe
+^!t:: Run C:\Users\z002803\Documents\github\batch-script\1-run-cpu-program\run-cpu-program.bat
 
 ; 打开常用软件 Ctrl+Alt+字母
 ^!c:: Run WeChat.exe  ; 个人微信
@@ -28,7 +28,7 @@
 ^!j:: Run calc.exe        ; 计算器
 ;^!f:: Run brave.exe
 ^!i:: Run iexplore.exe    ; IE浏览器
-^!e:: Run C:\Program Files\Everything\Everything.exe  ; 搜索神器Everything
+^!e:: Run Everything.exe  ; 搜索神器Everything
 ^!o::                     ; 运行Emacs并打开org文件
 emacs=C:\emacs\bin\runemacs.exe
 orgfile1=C:\personal-data\github-repo\work-org\01-Work-ToDo.org
@@ -53,7 +53,7 @@ Send, {Enter}
 return
 
 ;方法2：通过批处理脚本实现,此方法会有黑框，可以用VBS方法解决
-;run C:\Users\WangSai\Desktop\App\My_AHK\IP_Config.bat
+;run C:\Users\z002803\Desktop\App\My_AHK\IP_Config.bat
 ;return
 
 ; 打开常用网址 Alt+字母
@@ -75,7 +75,7 @@ return
 
 ; 打开常用文件夹 Ctrl+Shift+字母
 ^+w:: Run D:\  ; D盘（工作文件夹）
-^+d:: Run C:\Users\WangSai\Desktop  ; 桌面文件夹
+^+d:: Run C:\Users\z002803\Desktop  ; 桌面文件夹
 
 
 ;=====================================================================o
@@ -127,56 +127,56 @@ Return
 >!w::
   ObjDir := GetObjDir()
   NewDirName := GetNewDirName()
-  FileCopy, C:\Users\WangSai\Sync\GitHub\ahk-script\新建空白文件\空白word文档.docx, %ObjDir%\%NewDirName%.docx
+  FileCopy, C:\Users\z002803\Documents\github\ahk-script\新建空白文件\空白word文档.docx, %ObjDir%\%NewDirName%.docx
 Return
 
 ; 新建excel文档 右Alt+字母e
 >!e::
   ObjDir := GetObjDir()
   NewDirName := GetNewDirName()
-  FileCopy, C:\Users\WangSai\Sync\GitHub\ahk-script\新建空白文件\空白excel文档.xlsx, %ObjDir%\%NewDirName%.xlsx
+  FileCopy, C:\Users\z002803\Documents\github\ahk-script\新建空白文件\空白excel文档.xlsx, %ObjDir%\%NewDirName%.xlsx
 Return
 
 ; 新建visio文档 右Alt+字母v
 >!v::
   ObjDir := GetObjDir()
   NewDirName := GetNewDirName()
-  FileCopy, C:\Users\WangSai\Sync\GitHub\ahk-script\新建空白文件\空白visio文档.vsdx, %ObjDir%\%NewDirName%.vsdx
+  FileCopy, C:\Users\z002803\Documents\github\ahk-script\新建空白文件\空白visio文档.vsdx, %ObjDir%\%NewDirName%.vsdx
 Return
 
 ; 新建文本文档 右Alt+字母t
 >!t::
   ObjDir := GetObjDir()
   NewDirName := GetNewDirName()
-  FileCopy, C:\Users\WangSai\Sync\GitHub\ahk-script\新建空白文件\空白文本文档.txt, %ObjDir%\%NewDirName%.txt
+  FileCopy, C:\Users\z002803\Documents\github\ahk-script\新建空白文件\空白文本文档.txt, %ObjDir%\%NewDirName%.txt
 Return
 
 ; 新建头文件 右Alt+字母h
 >!h::
   ObjDir := GetObjDir()
   NewDirName := GetNewDirName()
-  FileCopy, C:\Users\WangSai\Sync\GitHub\ahk-script\新建空白文件\空白头文件.h, %ObjDir%\%NewDirName%.h
+  FileCopy, C:\Users\z002803\Documents\github\ahk-script\新建空白文件\空白头文件.h, %ObjDir%\%NewDirName%.h
 Return
 
 ; 新建源文件 右Alt+字母c
 >!c::
   ObjDir := GetObjDir()
   NewDirName := GetNewDirName()
-  FileCopy, C:\Users\WangSai\Sync\GitHub\ahk-script\新建空白文件\空白源文件.c, %ObjDir%\%NewDirName%.c
+  FileCopy, C:\Users\z002803\Documents\github\ahk-script\新建空白文件\空白源文件.c, %ObjDir%\%NewDirName%.c
 Return
 
 ; 新建Markdown文件 右Alt+字母m
 >!m::
   ObjDir := GetObjDir()
   NewDirName := GetNewDirName()
-  FileCopy, C:\Users\WangSai\Sync\GitHub\ahk-script\新建空白文件\空白Markdown文件.md, %ObjDir%\%NewDirName%.md
+  FileCopy, C:\Users\z002803\Documents\github\ahk-script\新建空白文件\空白Markdown文件.md, %ObjDir%\%NewDirName%.md
 Return
 
 ; 新建Scheme文件 右Alt+字母s
 >!s::
   ObjDir := GetObjDir()
   NewDirName := GetNewDirName()
-  FileCopy, C:\Users\WangSai\Sync\GitHub\ahk-script\新建空白文件\空白Scheme文件.ss, %ObjDir%\%NewDirName%.ss
+  FileCopy, C:\Users\z002803\Documents\github\ahk-script\新建空白文件\空白Scheme文件.ss, %ObjDir%\%NewDirName%.ss
 Return
 
 ;=====================================================================o
