@@ -1,14 +1,16 @@
-﻿;启动文件夹位置
-;C:\Users\z002803\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
-;将可执行程序的快捷方式放入启动文件夹，可以实现开机启动AHK程序
+﻿
+;定义HOME路径
+HOME=C:\Users\z002803
 
+;启动文件夹位置
+;HOME\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+;将可执行程序的快捷方式放入启动文件夹，可以实现开机启动AHK程序
 
 ;=====================================================================o
 ;                         输入密码                                    |
 ;=====================================================================o
 
-::pp::hdesk.zemt.cn
-::ss::Wang2025@zemt
+; 取消，转移到Rime输入法symbols.yaml中
 
 ;=====================================================================o
 ;                         打开软件和网址                              |
@@ -20,7 +22,7 @@
 ;^!x:: Run "C:\Program Files (x86)\Altium\AD16\DXP.EXE"
 ;^!d:: Run GitHubDesktop.exe
 ^!v:: Run Code.exe
-^!t:: Run C:\Users\z002803\Documents\github\batch-script\1-run-cpu-program\run-cpu-program.bat
+^!t:: Run %HOME%\Sync\GitHub\batch-script\1-run-cpu-program\run-cpu-program.bat
 
 ; 打开常用软件 Ctrl+Alt+字母
 ^!c:: Run WeChat.exe  ; 个人微信
@@ -30,10 +32,9 @@
 ^!i:: Run iexplore.exe    ; IE浏览器
 ^!e:: Run Everything.exe  ; 搜索神器Everything
 ^!o::                     ; 运行Emacs并打开org文件
-emacs=C:\emacs\bin\runemacs.exe
-orgfile1=C:\personal-data\github-repo\work-org\01-Work-ToDo.org
-orgfile2=C:\personal-data\github-repo\work-org\02-Work-Wiki.org
-Run,%emacs% "%orgfile1%" "%orgfile2%" "%orgfile3%"  ;重点：不要加逗号，文件路径加双引号
+;emacs=C:\emacs\bin\runemacs.exe 将emacs路径加入到环境变量path中以后，可取消这行设置
+orgfile1=%HOME%\Sync\Notes-and-GTD\gtd.org
+Run runemacs.exe "%orgfile1%"  ;重点：不要加逗号，文件路径加双引号
 return
 
 ; Win+R输入命令后回车 Ctrl+Alt+字母
@@ -46,6 +47,14 @@ return
 ;应选择相应的配置文件进行修改。对于“朙月拼音·简化字”来说，这个配置文件是 luna_pinyin_simp.schema.yaml
 ;需要注意的是，默认输入状态的配置是针对输入法进行的，因此如果想使所有输入法都默认输入英文，
 ;则需要分别修改它们的配置文件。最后，记得部署(deploy)一下 Rime，使配置生效
+;以上是直接修改输入法配置文件的方法，更好的方法是在用户文件夹内新建luna_pinyin_simp.custom.yaml文件
+;在其中添加如下补丁语句：
+; patch:
+;  "switches/@0/reset": 1
+; 然后再重新部署即可
+;参考：https://github.com/rime/weasel/issues/20
+;https://sspai.com/post/55699
+
 Send, #r
 Sleep, 500  ; wait 500 milliseconds
 Send, ncpa.cpl
@@ -53,7 +62,7 @@ Send, {Enter}
 return
 
 ;方法2：通过批处理脚本实现,此方法会有黑框，可以用VBS方法解决
-;run C:\Users\z002803\Desktop\App\My_AHK\IP_Config.bat
+;run %HOME%\Desktop\App\My_AHK\IP_Config.bat
 ;return
 
 ; 打开常用网址 Alt+字母
@@ -75,7 +84,7 @@ return
 
 ; 打开常用文件夹 Ctrl+Shift+字母
 ^+w:: Run D:\  ; D盘（工作文件夹）
-^+d:: Run C:\Users\z002803\Desktop  ; 桌面文件夹
+^+d:: Run %HOME%\Desktop  ; 桌面文件夹
 
 
 ;=====================================================================o
@@ -127,56 +136,56 @@ Return
 >!w::
   ObjDir := GetObjDir()
   NewDirName := GetNewDirName()
-  FileCopy, C:\Users\z002803\Documents\github\ahk-script\新建空白文件\空白word文档.docx, %ObjDir%\%NewDirName%.docx
+  FileCopy, %HOME%\Sync\GitHub\ahk-script\新建空白文件\空白word文档.docx, %ObjDir%\%NewDirName%.docx
 Return
 
 ; 新建excel文档 右Alt+字母e
 >!e::
   ObjDir := GetObjDir()
   NewDirName := GetNewDirName()
-  FileCopy, C:\Users\z002803\Documents\github\ahk-script\新建空白文件\空白excel文档.xlsx, %ObjDir%\%NewDirName%.xlsx
+  FileCopy, %HOME%\Sync\GitHub\ahk-script\新建空白文件\空白excel文档.xlsx, %ObjDir%\%NewDirName%.xlsx
 Return
 
 ; 新建visio文档 右Alt+字母v
 >!v::
   ObjDir := GetObjDir()
   NewDirName := GetNewDirName()
-  FileCopy, C:\Users\z002803\Documents\github\ahk-script\新建空白文件\空白visio文档.vsdx, %ObjDir%\%NewDirName%.vsdx
+  FileCopy, %HOME%\Sync\GitHub\ahk-script\新建空白文件\空白visio文档.vsdx, %ObjDir%\%NewDirName%.vsdx
 Return
 
 ; 新建文本文档 右Alt+字母t
 >!t::
   ObjDir := GetObjDir()
   NewDirName := GetNewDirName()
-  FileCopy, C:\Users\z002803\Documents\github\ahk-script\新建空白文件\空白文本文档.txt, %ObjDir%\%NewDirName%.txt
+  FileCopy, %HOME%\Sync\GitHub\ahk-script\新建空白文件\空白文本文档.txt, %ObjDir%\%NewDirName%.txt
 Return
 
 ; 新建头文件 右Alt+字母h
 >!h::
   ObjDir := GetObjDir()
   NewDirName := GetNewDirName()
-  FileCopy, C:\Users\z002803\Documents\github\ahk-script\新建空白文件\空白头文件.h, %ObjDir%\%NewDirName%.h
+  FileCopy, %HOME%\Sync\GitHub\ahk-script\新建空白文件\空白头文件.h, %ObjDir%\%NewDirName%.h
 Return
 
 ; 新建源文件 右Alt+字母c
 >!c::
   ObjDir := GetObjDir()
   NewDirName := GetNewDirName()
-  FileCopy, C:\Users\z002803\Documents\github\ahk-script\新建空白文件\空白源文件.c, %ObjDir%\%NewDirName%.c
+  FileCopy, %HOME%\Sync\GitHub\ahk-script\新建空白文件\空白源文件.c, %ObjDir%\%NewDirName%.c
 Return
 
 ; 新建Markdown文件 右Alt+字母m
 >!m::
   ObjDir := GetObjDir()
   NewDirName := GetNewDirName()
-  FileCopy, C:\Users\z002803\Documents\github\ahk-script\新建空白文件\空白Markdown文件.md, %ObjDir%\%NewDirName%.md
+  FileCopy, %HOME%\Sync\GitHub\ahk-script\新建空白文件\空白Markdown文件.md, %ObjDir%\%NewDirName%.md
 Return
 
 ; 新建Scheme文件 右Alt+字母s
 >!s::
   ObjDir := GetObjDir()
   NewDirName := GetNewDirName()
-  FileCopy, C:\Users\z002803\Documents\github\ahk-script\新建空白文件\空白Scheme文件.ss, %ObjDir%\%NewDirName%.ss
+  FileCopy, %HOME%\Sync\GitHub\ahk-script\新建空白文件\空白Scheme文件.ss, %ObjDir%\%NewDirName%.ss
 Return
 
 ;=====================================================================o
