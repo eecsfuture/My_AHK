@@ -23,6 +23,7 @@ HOME=C:\Users\z002803
 ;^!d:: Run GitHubDesktop.exe
 ^!v:: Run Code.exe
 ^!t:: Run %HOME%\Sync\GitHub\batch-script\1-run-cpu-program\run-cpu-program.bat
+^!s:: Run %HOME%\Sync\GitHub\batch-script\4-signal-proxy\set_proxy_and_start_signal.bat
 
 ; 打开常用软件 Ctrl+Alt+字母
 ^!c:: Run WeChat.exe  ; 个人微信
