@@ -17,19 +17,14 @@ HOME=C:\Users\z002803
 ;=====================================================================o
 
 ; 打开专业软件 Ctrl+Alt+字母，通过添加环境变量的方法定位程序
-;^!c:: Run "C:\ti\ccsv7\eclipse\ccstudio.exe"  ; CCS
-;^!m:: Run "C:\Program Files (x86)\Matlab_R2009A\bin\matlab.exe"
-;^!x:: Run "C:\Program Files (x86)\Altium\AD16\DXP.EXE"
-;^!d:: Run GitHubDesktop.exe
 ^!v:: Run Code.exe
 ^!t:: Run %HOME%\Sync\GitHub\batch-script\1-run-cpu-program\run-cpu-program.bat
 ^!s:: Run %HOME%\Sync\GitHub\batch-script\4-signal-proxy\set_proxy_and_start_signal.bat
 
 ; 打开常用软件 Ctrl+Alt+字母
-^!c:: Run WeChat.exe  ; 个人微信
+^!c:: Run C:\Program Files (x86)\Tencent\WeChat\WeChat.exe  ; 个人微信
 ^!w:: Run C:\Program Files (x86)\WXWork\WXWork.exe  ; 企业微信
 ^!j:: Run calc.exe        ; 计算器
-;^!f:: Run brave.exe
 ^!i:: Run iexplore.exe    ; IE浏览器
 ^!e:: Run Everything.exe  ; 搜索神器Everything
 ^!o::                     ; 运行Emacs并打开org文件
