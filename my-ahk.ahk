@@ -7,10 +7,20 @@ HOME=C:\Users\z002803
 ;将可执行程序的快捷方式放入启动文件夹，可以实现开机启动AHK程序
 
 ;=====================================================================o
-;                         输入密码                                    |
+;                         输入字符                                    |
 ;=====================================================================o
 
-; 取消，转移到Rime输入法symbols.yaml中
+; 密码取消，转移到Rime输入法symbols.yaml中
+
+; ChatGPT 翻译 Alt+c
+!c::
+Send, Translate this sentence into Chinese:{Space}
+return
+
+; ChatGPT 翻译 Alt+d
+!d::
+Send, What does "XXXX" mean in above sentence? Explain in English
+return
 
 ;=====================================================================o
 ;                         打开软件和网址                              |
@@ -22,7 +32,7 @@ HOME=C:\Users\z002803
 ^!s:: Run %HOME%\Sync\GitHub\batch-script\4-signal-proxy\set_proxy_and_start_signal.bat
 
 ; 打开常用软件 Ctrl+Alt+字母
-^!c:: Run C:\Program Files (x86)\Tencent\WeChat\WeChat.exe  ; 个人微信
+^!c:: Run C:\Program Files\Tencent\WeChat\WeChat.exe  ; 个人微信
 ^!w:: Run C:\Program Files (x86)\WXWork\WXWork.exe  ; 企业微信
 ^!j:: Run calc.exe        ; 计算器
 ^!i:: Run iexplore.exe    ; IE浏览器
@@ -72,8 +82,8 @@ return
 ; Parameter #2: Pass 1 instead of 0 to suspend immediately rather than asking each application for permission.
 ; Parameter #3: Pass 1 instead of 0 to disable all wake events.
 ; https://www.autohotkey.com/docs/commands/Shutdown.htm
-; Alt+s --> suspend
-!s::DllCall("PowrProf\SetSuspendState", "Int", 0, "Int", 0, "Int", 0)
+; Alt+s --> suspend 取消
+;!s::DllCall("PowrProf\SetSuspendState", "Int", 0, "Int", 0, "Int", 0)
 ; Alt+h --> hibernate
 !h::DllCall("PowrProf\SetSuspendState", "Int", 1, "Int", 0, "Int", 0)
 
