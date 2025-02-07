@@ -27,7 +27,7 @@ return
 ;=====================================================================o
 
 ; 打开专业软件 Ctrl+Alt+字母，通过添加环境变量的方法定位程序
-^!v:: Run Code.exe
+;^!v:: Run Code.exe
 ^!t:: Run %HOME%\Sync\GitHub\batch-script\1-run-cpu-program\run-cpu-program.bat
 ^!s:: Run %HOME%\Sync\GitHub\batch-script\4-signal-proxy\set_proxy_and_start_signal.bat
 
